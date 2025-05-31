@@ -1,6 +1,6 @@
 'use client'
 
-import { Card, CardContent, Typography, Grid, Avatar, Box } from '@mui/material'
+import { Card, CardContent, Typography, Avatar, Box } from '@mui/material'
 import Link from 'next/link'
 
 interface Coin {

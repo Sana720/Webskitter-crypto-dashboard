@@ -122,7 +122,7 @@ Place screenshots in `public/screenshots/` and reference them like:
 ## 🙋 Author
 
 **Sana Ahmad**  
-GitHub: [@your-username](https://github.com/your-username)
+GitHub: [@your-username](https://github.com/Sana720)
 
 ---
 
