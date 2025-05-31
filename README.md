@@ -8,7 +8,7 @@ A modern, responsive cryptocurrency dashboard built with **Next.js**, **Material
 ## 🔗 Live Demo
 
 **Coming Soon...**  
-_Replace this with your deployed Vercel URL once live._
+[live url](https://webskitter-crypto-dashboard.vercel.app/)
 
 ---
 
