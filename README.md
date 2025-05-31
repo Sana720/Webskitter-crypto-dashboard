@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# 💰 Crypto Dashboard
 
-First, run the development server:
+A modern, responsive cryptocurrency dashboard built with **Next.js**, **Material UI**, **Clerk authentication**, **React Query**, and **Chart.js**. This project fetches and displays live crypto market data via the CoinGecko API.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🔗 Live Demo
+
+**Coming Soon...**  
+_Replace this with your deployed Vercel URL once live._
+
+---
+
+## 📂 Features
+
+- ✅ Secure user authentication via **Clerk**
+- ✅ Top 50 cryptocurrencies dashboard
+- ✅ Live search and sorting
+- ✅ Individual coin detail pages
+- ✅ OHLC + 7-day charts (via **Chart.js**)
+- ✅ Real-time ticker + market stats
+- ✅ Light/dark theme toggle (MUI)
+- ✅ Fully responsive across devices
+- ✅ Auth-protected routes (`middleware.ts`)
+- ✅ **Deployed on Vercel**
+
+---
+
+## 🚀 Tech Stack
+
+- **Next.js 14** (App Router)
+- **TypeScript**
+- **Material UI**
+- **Clerk** (authentication)
+- **TanStack React Query** (data fetching & caching)
+- **Chart.js** (`react-chartjs-2`)
+- **CoinGecko API**
+- **Vercel** (deployment)
+
+---
+
+## 🧠 Architecture
+
+```
+/
+├── app/                  → App Router pages & layout
+├── components/           → Reusable UI components
+├── context/ThemeContext.tsx  → Theme management (dark/light)
+├── lib/queries.ts        → Axios-based API queries
+├── middleware.ts         → Route protection with Clerk
+├── types/                → TypeScript interfaces/types
+├── styles/               → Global and MUI theming
+└── public/screenshots/   → Optional screenshots for README
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚙️ Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/crypto-dashboard.git
+   cd crypto-dashboard
+   ```
 
-## Learn More
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. **Setup environment variables**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   Create a `.env.local` file:
+   ```env
+   NEXT_PUBLIC_API_BASE_URL=https://api.coingecko.com/api/v3
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+   CLERK_SECRET_KEY=your_clerk_secret_key
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Run the app**
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ⚠️ API Rate Limit Note
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> CoinGecko’s free API has strict rate limits.  
+> Rapid requests (e.g., switching between multiple coin pages quickly) may trigger:
+
+```
+429 Too Many Requests
+```
+
+Although caching (`staleTime`) via React Query was tested, it still led to rate limits — so it was removed in favor of better handling and documentation.
+
+---
+
+## 🔐 Protected Routes
+
+Pages like `/dashboard` and `/coin/[id]` are protected using **Clerk + `middleware.ts`**, ensuring only authenticated users can access them.
+
+---
+
+## 📸 Screenshots (Optional)
+
+Place screenshots in `public/screenshots/` and reference them like:
+
+```
+![Home](public/screenshots/home.png)
+![Sign In](public/screenshots/signin.png)
+![Dashboard](public/screenshots/dashboard.png)
+![Coin Details](public/screenshots/coinDetails.png)
+![Ticker](public/screenshots/ticker.png)
+![Sorting Filter](public/screenshots/sorting-filter.png)
+```
+
+---
+
+## 🙋 Author
+
+**Sana Ahmad**  
+GitHub: [@your-username](https://github.com/your-username)
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
